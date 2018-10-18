@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<menu-config xmlns="http://schemas.haulmont.com/cuba/menu.xsd">
+    <menu id="application-web2"
+          insertBefore="administration">
+        <item screen="web2$Sparepart.browse"/>
+        <item screen="web2$Client.browse"/>
+        <item screen="web2$Mechanic.browse"/>
+        <item screen="web2$Order.browse"/>
+    </menu>
+</menu-config>

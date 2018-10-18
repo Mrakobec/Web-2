@@ -1,0 +1,21 @@
+-- begin WEB2_CLIENT
+create unique index IDX_WEB2_CLIENT_UNIQ_EMAIL on WEB2_CLIENT (EMAIL) ^
+create unique index IDX_WEB2_CLIENT_UNIQ_PHONE on WEB2_CLIENT (PHONE) ^
+-- end WEB2_CLIENT
+-- begin WEB2_MECHANIC
+alter table WEB2_MECHANIC add constraint FK_WEB2_MECHANIC_ON_USER foreign key (USER_ID) references SEC_USER(ID)^
+create index IDX_WEB2_MECHANIC_ON_USER on WEB2_MECHANIC (USER_ID)^
+-- end WEB2_MECHANIC
+-- begin WEB2_SPAREPART
+create unique index IDX_WEB2_SPAREPART_UNIQ_TITLE on WEB2_SPAREPART (TITLE) ^
+-- end WEB2_SPAREPART
+-- begin WEB2_ORDER
+alter table WEB2_ORDER add constraint FK_WEB2_ORDER_ON_CLIENT foreign key (CLIENT_ID) references WEB2_CLIENT(ID)^
+alter table WEB2_ORDER add constraint FK_WEB2_ORDER_ON_MECHANIC foreign key (MECHANIC_ID) references WEB2_MECHANIC(ID)^
+create index IDX_WEB2_ORDER_ON_CLIENT on WEB2_ORDER (CLIENT_ID)^
+create index IDX_WEB2_ORDER_ON_MECHANIC on WEB2_ORDER (MECHANIC_ID)^
+-- end WEB2_ORDER
+-- begin WEB2_ORDER_SPAREPART_LINK
+alter table WEB2_ORDER_SPAREPART_LINK add constraint FK_ORDSPA_ON_ORDER foreign key (ORDER_ID) references WEB2_ORDER(ID)^
+alter table WEB2_ORDER_SPAREPART_LINK add constraint FK_ORDSPA_ON_SPAREPART foreign key (SPAREPART_ID) references WEB2_SPAREPART(ID)^
+-- end WEB2_ORDER_SPAREPART_LINK

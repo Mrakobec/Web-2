@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.company.web2.web.sparepart.SparepartBrowse"
+        focusComponent="sparepartsTable"
+        lookupComponent="sparepartsTable"
+        messagesPack="com.company.web2.web.sparepart">
+    <dsContext>
+        <groupDatasource id="sparepartsDs"
+                         class="com.company.web2.entity.Sparepart"
+                         view="_local">
+            <query>
+                <![CDATA[select e from web2$Sparepart e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="sparepartsTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="sparepartsTable"
+                datasource="sparepartsDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="sparepartsTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="title"/>
+                <column id="description"/>
+                <column id="price"/>
+            </columns>
+            <rows datasource="sparepartsDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="sparepartsTable.create"/>
+                <button id="editBtn"
+                        action="sparepartsTable.edit"/>
+                <button id="removeBtn"
+                        action="sparepartsTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

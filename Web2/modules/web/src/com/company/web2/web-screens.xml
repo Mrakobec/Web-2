@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<screen-config xmlns="http://schemas.haulmont.com/cuba/screens.xsd">
+    <screen id="web2$Sparepart.browse"
+            template="com/company/web2/web/sparepart/sparepart-browse.xml"/>
+    <screen id="web2$Sparepart.edit"
+            template="com/company/web2/web/sparepart/sparepart-edit.xml"/>
+    <screen id="web2$Client.browse"
+            template="com/company/web2/web/client/client-browse.xml"/>
+    <screen id="web2$Client.edit"
+            template="com/company/web2/web/client/client-edit.xml"/>
+    <screen id="web2$Mechanic.browse"
+            template="com/company/web2/web/mechanic/mechanic-browse.xml"/>
+    <screen id="web2$Mechanic.edit"
+            template="com/company/web2/web/mechanic/mechanic-edit.xml"/>
+    <screen id="web2$Order.browse"
+            template="com/company/web2/web/order/order-browse.xml"/>
+    <screen id="web2$Order.edit"
+            template="com/company/web2/web/order/order-edit.xml"/>
+</screen-config>
